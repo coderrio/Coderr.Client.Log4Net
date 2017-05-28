@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OneTrueError.Reporting.Log4Net")]
-[assembly: AssemblyDescription("Seamless integration for log4net")]
+[assembly: AssemblyTitle("OneTrueError.Client.log4net")]
+[assembly: AssemblyDescription("Support for log4net.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Gauffin Interactive AB")]
-[assembly: AssemblyProduct("OneTrueError")]
-[assembly: AssemblyCopyright("Copyright ©  2014 Gauffin Interactive AB")]
+[assembly: AssemblyCompany("1TCompany AB")]
+[assembly: AssemblyProduct("https://onetrueerror.com")]
+[assembly: AssemblyCopyright("Copyright © 2017 1TCompany AB. All rights reserved")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.1.1.0")]
+[assembly: AssemblyFileVersion("1.1.1.0")]

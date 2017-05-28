@@ -68,9 +68,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OneTrueError.Client.Log4Net\OneTrueError.Client.Log4Net.csproj">
+    <ProjectReference Include="..\OneTrueError.Client.Log4Net\OneTrueError.Client.log4net.csproj">
       <Project>{68d2eab6-0cd9-4102-a981-552217c06014}</Project>
-      <Name>OneTrueError.Client.Log4Net</Name>
+      <Name>OneTrueError.Client.log4net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

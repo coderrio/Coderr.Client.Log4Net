@@ -1,8 +1,8 @@
-﻿Log4Net client for OneTrueError
+﻿Log4Net support OneTrueError
 ================================
 
 You've just installed the log4net integration library for OneTrueError. 
-All exceptions that are logged through log4net will automatically be uploaded to OneTrueError (http://onetrueerror.com).
+All exceptions that are logged through log4net will automatically be uploaded to OneTrueError (https://onetrueerror.com).
 
 To get started add the following code to your application:
 
