@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OneTrueError.Client.Log4Net
+namespace OneTrueError.Client.log4net
 {
     /// <summary>
     ///     Context View Model attached to all reported exceptions

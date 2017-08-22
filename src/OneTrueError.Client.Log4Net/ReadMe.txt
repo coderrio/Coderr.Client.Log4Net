@@ -1,4 +1,4 @@
-﻿Log4Net support OneTrueError
+﻿Sends logged errors to OneTrueerror
 ================================
 
 You've just installed the log4net integration library for OneTrueError. 

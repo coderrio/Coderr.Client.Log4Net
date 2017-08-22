@@ -3,7 +3,7 @@ using log4net;
 using log4net.Core;
 using log4net.Repository.Hierarchy;
 using OneTrueError.Client.Config;
-using OneTrueError.Client.Log4Net;
+using OneTrueError.Client.log4net;
 
 // ReSharper disable once CheckNamespace
 

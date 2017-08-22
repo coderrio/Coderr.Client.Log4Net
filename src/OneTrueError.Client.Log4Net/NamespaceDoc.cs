@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace OneTrueError.Client.Log4Net
+namespace OneTrueError.Client.log4net
 {
     /// <summary>
     ///     <para>

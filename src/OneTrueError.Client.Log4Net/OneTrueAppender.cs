@@ -1,7 +1,7 @@
 ﻿using log4net.Appender;
 using log4net.Core;
 
-namespace OneTrueError.Client.Log4Net
+namespace OneTrueError.Client.log4net
 {
     /// <summary>
     ///     Our appender for logging.
