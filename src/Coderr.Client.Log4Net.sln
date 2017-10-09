@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTrueError.Client.log4net", "OneTrueError.Client.Log4Net\OneTrueError.Client.log4net.csproj", "{68D2EAB6-0CD9-4102-A981-552217C06014}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeRR.Client.Log4Net", "Coderr.Client.Log4Net\Coderr.Client.Log4Net.csproj", "{68D2EAB6-0CD9-4102-A981-552217C06014}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTrueError.Client.Log4Net.Tests", "OneTrueError.Client.Log4Net.Tests\OneTrueError.Client.Log4Net.Tests.csproj", "{B44B4984-DD56-4D3B-84C8-2590FCB2FA2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeRR.Client.Log4Net.Tests", "Coderr.Client.Log4Net.Tests\Coderr.Client.Log4Net.Tests.csproj", "{B44B4984-DD56-4D3B-84C8-2590FCB2FA2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTrueError.Client.Log4net.Demo", "OneTrueError.Client.Log4net.Demo\OneTrueError.Client.Log4net.Demo.csproj", "{7F1EF34D-A1DF-4EE6-AE27-EDC2F89924EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeRR.Client.Log4net.Demo", "Coderr.Client.Log4net.Demo\Coderr.Client.Log4net.Demo.csproj", "{7F1EF34D-A1DF-4EE6-AE27-EDC2F89924EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

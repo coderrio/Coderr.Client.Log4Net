@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using OneTrueError.Client.Contracts;
-using OneTrueError.Client.Uploaders;
+using codeRR.Client.Contracts;
+using codeRR.Client.Uploaders;
 
-namespace OneTrueError.Client.Log4Net.Tests
+namespace codeRR.Client.Log4Net.Tests
 {
     public class TestUploader : IReportUploader
     {

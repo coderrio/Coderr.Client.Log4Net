@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace OneTrueError.Client.Log4net.Demo
+namespace Coderr.Client.Log4net.Demo
 {
     [Serializable]
     public class AnnoyingException : Exception

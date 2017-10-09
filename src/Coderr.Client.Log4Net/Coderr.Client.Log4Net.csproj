@@ -1,27 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net451</TargetFramework>
-    <PackageId>OneTrueError.Client.log4net</PackageId>
+    <PackageId>Coderr.Client.Log4Net</PackageId>
     <Authors>1TCompany AB</Authors>
-    <Description>Reports all logged exceptions to OneTrueError </Description>
+    <Description>Reports all logged exceptions to codeRR </Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>Converted to vstudio 2017 csproj format</PackageReleaseNotes>
     <Copyright>© 2017 1TCompany AB. All rights reserved.</Copyright>
     <PackageTags>logger exceptions analysis log4net</PackageTags>
-    <PackageIconUrl>http://onetrueerror.com/images/nuget_icon.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/onetrueerror/onetrueerror.client.log4net</RepositoryUrl>
+    <PackageIconUrl>http://coderrapp.com/images/nuget_icon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/coderrapp/coderr.client.log4net/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseUrl>https://github.com/onetrueerror/onetrueerror.client.log4net/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://onetrueerror.com</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/coderrapp/coderr.client.log4net/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://coderrapp.com</PackageProjectUrl>
     <Version>1.1.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net451\OneTrueError.Client.log4net.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net451\Coderr.Client.log4net.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-    <PackageReference Include="OneTrueError.Client" Version="1.0.3" />
+    <PackageReference Include="Coderr.Client" Version="1.0.5" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>

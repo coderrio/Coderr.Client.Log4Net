@@ -1,7 +1,7 @@
 ﻿using System;
 using log4net;
 
-namespace OneTrueError.Client.Log4net.Demo
+namespace Coderr.Client.Log4net.Demo
 {
     public class SomeService
     {

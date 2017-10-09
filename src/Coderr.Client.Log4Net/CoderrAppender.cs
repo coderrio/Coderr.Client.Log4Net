@@ -1,18 +1,18 @@
 ﻿using log4net.Appender;
 using log4net.Core;
 
-namespace OneTrueError.Client.log4net
+namespace codeRR.Client.log4net
 {
     /// <summary>
     ///     Our appender for logging.
     /// </summary>
     /// <remarks>
-    ///     <para>Will upload all log entries that contains exceptions to OneTrueError.</para>
+    ///     <para>Will upload all log entries that contains exceptions to codeRR.</para>
     /// </remarks>
-    public class OneTrueAppender : AppenderSkeleton
+    public class CoderrAppender : AppenderSkeleton
     {
         /// <summary>
-        /// Uploads all log entries that contains an exception to OneTrueError.
+        /// Uploads all log entries that contains an exception to codeRR.
         /// </summary>
         /// <param name="loggingEvent">The logging event.</param>
         protected override void Append(LoggingEvent loggingEvent)
@@ -20,7 +20,7 @@ namespace OneTrueError.Client.log4net
             if (loggingEvent.ExceptionObject == null)
                 return;
 
-            OneTrue.Report(loggingEvent.ExceptionObject, new LogEntryDetails
+            Err.Report(loggingEvent.ExceptionObject, new LogEntryDetails
             {
                 LogLevel = loggingEvent.Level.ToString(),
                 Message = loggingEvent.RenderedMessage,

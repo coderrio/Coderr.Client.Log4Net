@@ -1,7 +1,7 @@
 ﻿using System;
 using log4net.Core;
 
-namespace OneTrueError.Client.log4net
+namespace codeRR.Client.log4net
 {
     /// <summary>
     /// </summary>

@@ -4,14 +4,14 @@ using System.Threading;
 using FluentAssertions;
 using log4net;
 using log4net.Core;
-using OneTrueError.Client.log4net;
+using codeRR.Client.log4net;
 using Xunit;
 
-namespace OneTrueError.Client.Log4Net.Tests
+namespace codeRR.Client.Log4Net.Tests
 {
-    public class OneTrueAppenderTests
+    public class CoderrAppenderTests
     {
-        public OneTrueAppenderTests()
+        public CoderrAppenderTests()
         {
             if (LogManager.GetAllRepositories().Length == 0)
                 LogManager.CreateRepository("Myname");
@@ -23,9 +23,9 @@ namespace OneTrueError.Client.Log4Net.Tests
             var ex = new Exception("msg");
             var evt = new LoggingEvent(GetType(), LogManager.GetAllRepositories().First(), "OurLogger", Level.Critical, logMessage, ex);
             var uploader = TestUploader.Instance;
-            OneTrue.Configuration.Uploaders.Register(uploader);
+            Err.Configuration.Uploaders.Register(uploader);
 
-            var sut = new OneTrueAppender();
+            var sut = new CoderrAppender();
             sut.DoAppend(evt);
 
             var entry = TestUploader.Instance.GetReport(logMessage);
@@ -39,9 +39,9 @@ namespace OneTrueError.Client.Log4Net.Tests
             var ex = new Exception("msg");
             var evt = new LoggingEvent(GetType(), LogManager.GetAllRepositories().First(), "OurLogger", Level.Critical, logMessage, ex);
             var uploader = TestUploader.Instance;
-            OneTrue.Configuration.Uploaders.Register(uploader);
+            Err.Configuration.Uploaders.Register(uploader);
 
-            var sut = new OneTrueAppender();
+            var sut = new CoderrAppender();
             sut.DoAppend(evt);
 
             var entry = TestUploader.Instance.GetReport(logMessage);
@@ -56,9 +56,9 @@ namespace OneTrueError.Client.Log4Net.Tests
             var ex = new Exception("msg");
             var evt = new LoggingEvent(GetType(), LogManager.GetAllRepositories().First(), "OurLogger", Level.Critical, logMessage, ex);
             var uploader = TestUploader.Instance;
-            OneTrue.Configuration.Uploaders.Register(uploader);
+            Err.Configuration.Uploaders.Register(uploader);
 
-            var sut = new OneTrueAppender();
+            var sut = new CoderrAppender();
             sut.DoAppend(evt);
 
             var entry = TestUploader.Instance.GetReport(logMessage);
@@ -68,14 +68,13 @@ namespace OneTrueError.Client.Log4Net.Tests
         [Fact]
         public void should_include_timestamp()
         {
-            Thread.CurrentThread.Name = "Hello";
             var logMessage = Guid.NewGuid().ToString();
             var ex = new Exception("msg");
             var evt = new LoggingEvent(GetType(), LogManager.GetAllRepositories().First(), "OurLogger", Level.Critical, logMessage, ex);
             var uploader = TestUploader.Instance;
-            OneTrue.Configuration.Uploaders.Register(uploader);
+            Err.Configuration.Uploaders.Register(uploader);
 
-            var sut = new OneTrueAppender();
+            var sut = new CoderrAppender();
             sut.DoAppend(evt);
 
             var entry = TestUploader.Instance.GetReport(logMessage);
@@ -88,9 +87,9 @@ namespace OneTrueError.Client.Log4Net.Tests
             var logMessage = Guid.NewGuid().ToString();
             var evt = new LoggingEvent(GetType(), LogManager.GetAllRepositories().First(), "OurLogger", Level.Critical, logMessage, null);
             var uploader = TestUploader.Instance;
-            OneTrue.Configuration.Uploaders.Register(uploader);
+            Err.Configuration.Uploaders.Register(uploader);
 
-            var sut = new OneTrueAppender();
+            var sut = new CoderrAppender();
             sut.DoAppend(evt);
 
             TestUploader.Instance.FindReport(logMessage).Should().BeNull();

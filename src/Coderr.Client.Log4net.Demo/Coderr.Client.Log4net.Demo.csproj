@@ -4,12 +4,11 @@
     <TargetFramework>net451</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="OneTrueError.Client" Version="1.0.3" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OneTrueError.Client.log4net\OneTrueError.Client.log4net.csproj" />
+    <ProjectReference Include="..\Coderr.Client.log4net\Coderr.Client.log4net.csproj" />
   </ItemGroup>
 
 </Project>
