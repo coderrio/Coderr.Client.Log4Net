@@ -1,9 +1,11 @@
 log4net integration library
 ===========================
 
+[![VSTS](https://1tcompany.visualstudio.com/_apis/public/build/definitions/75570083-b1ef-4e78-88e2-5db4982f756c/13/badge)]() [![NuGet](https://img.shields.io/nuget/dt/codeRR.Client.log4net.svg?style=flat-square)]()
+
 This library will report all exceptions that you log using log4net.
 
-For instance:
+# Example
 
 ```csharp
 try
@@ -15,6 +17,8 @@ catch (Exception ex)
     _logger.Debug("Failed to do business", ex);
 }
 ```
+
+## Result
 
 Will result in an exception in codeRR with the following (extra) context information:
 
@@ -63,7 +67,12 @@ namespace codeRR.Client.Log4net.Demo
 }
 ```csharp
 
-# Questions?
+# Requirements
 
-* [Documentation](https://coderrapp.com/documentation/client/libraries/log4net/) 
-* [Forum](http://discuss.coderrapp.com)
+You need to either install [codeRR Community Server](https://github.com/coderrapp/coderr.server) or use [codeRR Live](https://coderrapp.com/live).
+
+# More information
+
+* Questions? http://discuss.coderrapp.com
+* Documentation: https://coderrapp.com/documentation/client/libraries/log4net/
+

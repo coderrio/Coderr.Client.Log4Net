@@ -13,7 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://raw.githubusercontent.com/coderrapp/coderr.client.log4net/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://coderrapp.com</PackageProjectUrl>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
