@@ -5,6 +5,7 @@
     <PackageId>Coderr.Client.Log4Net</PackageId>
     <Version>1.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup>
     <Authors>1TCompany AB</Authors>
@@ -13,12 +14,11 @@
     <PackageReleaseNotes>Converted to vstudio 2017 csproj format</PackageReleaseNotes>
     <Copyright>© 2017 1TCompany AB. All rights reserved.</Copyright>
     <PackageTags>logger exceptions analysis log4net</PackageTags>
-    <PackageIconUrl>http://coderrapp.com/images/nuget_icon.png</PackageIconUrl>
+    <PackageIconUrl>https://coderrapp.com/images/nuget_icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/coderrapp/coderr.client.log4net/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://raw.githubusercontent.com/coderrapp/coderr.client.log4net/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://coderrapp.com</PackageProjectUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Coderr.Client" Version="1.0.6" />
