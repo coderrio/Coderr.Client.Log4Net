@@ -65,7 +65,7 @@ namespace codeRR.Client.Log4net.Demo
         }
     }
 }
-```csharp
+```
 
 # Requirements
 
