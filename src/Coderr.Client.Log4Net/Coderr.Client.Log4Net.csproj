@@ -1,7 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net451</TargetFramework>
     <PackageId>Coderr.Client.Log4Net</PackageId>
+    <Version>1.0.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
     <Authors>1TCompany AB</Authors>
     <Description>Reports all logged exceptions to codeRR </Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -13,14 +18,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://raw.githubusercontent.com/coderrapp/coderr.client.log4net/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://coderrapp.com</PackageProjectUrl>
-    <Version>1.1.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net451\Coderr.Client.log4net.xml</DocumentationFile>
-  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Coderr.Client" Version="1.0.5" />
+    <PackageReference Include="Coderr.Client" Version="1.0.6" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>
