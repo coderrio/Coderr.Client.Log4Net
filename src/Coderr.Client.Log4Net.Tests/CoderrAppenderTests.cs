@@ -4,10 +4,10 @@ using System.Threading;
 using FluentAssertions;
 using log4net;
 using log4net.Core;
-using codeRR.Client.log4net;
+using Coderr.Client.log4net;
 using Xunit;
 
-namespace codeRR.Client.Log4Net.Tests
+namespace Coderr.Client.Log4Net.Tests
 {
     public class CoderrAppenderTests
     {

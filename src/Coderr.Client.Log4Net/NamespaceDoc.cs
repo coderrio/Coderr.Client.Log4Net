@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace codeRR.Client.log4net
+namespace Coderr.Client.log4net
 {
     /// <summary>
     ///     <para>

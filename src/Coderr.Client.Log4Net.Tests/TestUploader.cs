@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using codeRR.Client.Contracts;
-using codeRR.Client.Uploaders;
+using Coderr.Client.Contracts;
+using Coderr.Client.Uploaders;
 
-namespace codeRR.Client.Log4Net.Tests
+namespace Coderr.Client.Log4Net.Tests
 {
     public class TestUploader : IReportUploader
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace codeRR.Client.log4net
+namespace Coderr.Client.log4net
 {
     /// <summary>
     ///     Context View Model attached to all reported exceptions

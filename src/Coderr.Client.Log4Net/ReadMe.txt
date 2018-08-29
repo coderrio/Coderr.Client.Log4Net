@@ -1,25 +1,17 @@
-﻿codeRR log4net package
+﻿Coderr log4net package
 ======================
 
-Welcome to codeRR! 
+This library is the log4net client library of Coderr. You also need to use a Coderr server.
 
-We try to answer questions as fast as we can at our forum: http://discuss.coderrapp.com. 
-If you have any trouble at all, don't hesitate to post a message there.
-
-This library is the log4net client library of codeRR. It sends all logged exceptions to 
-the codeRR server for analysis.
-
-Do note that this library do not process the information but require a codeRR server for that.
-You can either install the open source server from https://github.com/coderrapp/coderr.server, or
-use our hosted service at https://coderrapp.com/live.
+https://coderr.io/documentation/getting-started/
 
 
 Configuration
 =============
 
-To start with, you need to configure the connection to the codeRR server, 
-this code is typically added in your Program.cs. This information is found either
-in our hosted service or in your installed codeRR server.
+To start with, you need to configure the connection to the Coderr server, 
+this code is typically added in your Program.cs. The configuration settings
+can be found in your chosen Coderr server.
 
     public class Program
     {
@@ -27,8 +19,8 @@ in our hosted service or in your installed codeRR server.
         {
             XmlConfigurator.Configure(new FileInfo("log4net.config"));
 
-            // codeRR configuration
-            var uri = new Uri("https://report.coderrapp.com/");
+            // Coderr configuration
+            var uri = new Uri("https://report.coderr.io/");
             Err.Configuration.Credentials(uri,
                 "yourAppKey",
                 "yourSharedSecret");
@@ -37,7 +29,7 @@ in our hosted service or in your installed codeRR server.
             Err.Configuration.CatchLog4NetExceptions();
 
             // the usual stuff
-			// [...]
+            // [...]
         }
     }
 
@@ -45,8 +37,8 @@ in our hosted service or in your installed codeRR server.
 Reporting exceptions
 ====================
 
-All unhandled exceptions are reported directly by this library. However, sometimes you'll want to use try/catch
-for some custom handling (or being able to display pretty error messages).
+All logged exceptions are reported directly by this library. 
+To report exceptions manually, you can use the Err.Report() method.
 
 Example:
 
@@ -64,5 +56,9 @@ Example:
         }
     }
 
-More examples: https://coderrapp.com/documentation/client/
-Questions? http://discuss.coderrapp.com
+
+Questions
+https://discuss.coderr.io
+
+Guides and support
+https://coderr.io/guides-and-support/

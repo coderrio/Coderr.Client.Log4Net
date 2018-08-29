@@ -1,7 +1,7 @@
 ﻿using log4net.Appender;
 using log4net.Core;
 
-namespace codeRR.Client.log4net
+namespace Coderr.Client.log4net
 {
     /// <summary>
     ///     Our appender for logging.

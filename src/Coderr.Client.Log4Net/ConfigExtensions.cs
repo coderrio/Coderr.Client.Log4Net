@@ -2,12 +2,12 @@
 using log4net;
 using log4net.Core;
 using log4net.Repository.Hierarchy;
-using codeRR.Client.Config;
-using codeRR.Client.log4net;
+using Coderr.Client.Config;
+using Coderr.Client.log4net;
 
 // ReSharper disable once CheckNamespace
 
-namespace codeRR.Client
+namespace Coderr.Client
 {
     /// <summary>
     ///     Adds the codeRR logger to log4net.

@@ -1,7 +1,7 @@
 ﻿using System;
 using log4net.Core;
 
-namespace codeRR.Client.log4net
+namespace Coderr.Client.log4net
 {
     /// <summary>
     /// </summary>

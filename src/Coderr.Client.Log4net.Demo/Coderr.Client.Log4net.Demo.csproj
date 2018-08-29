@@ -4,7 +4,6 @@
     <TargetFramework>net451</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OneTrueError.Client" Version="1.0.3" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>
