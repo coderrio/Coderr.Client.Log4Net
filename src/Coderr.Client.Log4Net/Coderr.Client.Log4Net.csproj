@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net451</TargetFramework>
+    <TargetFrameworks>net451;net46;net461</TargetFrameworks>
     <PackageId>Coderr.Client.Log4Net</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -17,11 +17,11 @@
     <PackageIconUrl>https://coderr.io/images/nuget_icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/coderrio/coderr.client.log4net/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/coderrio/coderr.client.log4net/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://coderr.io</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Coderr.Client" Version="1.1.0" />
+    <PackageReference Include="Coderr.Client" Version="1.1.5" />
     <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@ can be found in your chosen Coderr server.
                 "yourAppKey",
                 "yourSharedSecret");
 
-            // injects codeRR into the log4net pipeline
+            // injects Coderr into the log4net pipeline
             Err.Configuration.CatchLog4NetExceptions();
 
             // the usual stuff
@@ -33,28 +33,6 @@ can be found in your chosen Coderr server.
         }
     }
 
-
-Reporting exceptions
-====================
-
-All logged exceptions are reported directly by this library. 
-To report exceptions manually, you can use the Err.Report() method.
-
-Example:
-
-    public void SomeBusiness(PostViewModel model)
-    {
-        try
-        {
-            _somService.Execute(model);
-        }
-        catch (Exception ex)
-        {
-            Err.Report(ex, model);
-
-            //some custom handling
-        }
-    }
 
 
 Questions
