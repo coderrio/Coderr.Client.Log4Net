@@ -6,8 +6,8 @@
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-		<Version>1.2</Version>
-		<PackageReleaseNotes>Now attaches logs to every error report.</PackageReleaseNotes>
+		<Version>1.2.1</Version>
+		<PackageReleaseNotes>Removes log entries older than 5 minutes.</PackageReleaseNotes>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>1TCompany AB</Authors>

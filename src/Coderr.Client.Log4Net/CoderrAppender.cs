@@ -19,7 +19,7 @@ namespace Coderr.Client.log4net
         /// <param name="loggingEvent">The logging event.</param>
         protected override void Append(LoggingEvent loggingEvent)
         {
-            LogsProvider.Add(new LogEntryDto(loggingEvent.TimeStampUtc, ConvertLevel(loggingEvent.Level), loggingEvent.RenderedMessage)
+            LogsProvider.Instance.Add(new LogEntryDto(loggingEvent.TimeStampUtc, ConvertLevel(loggingEvent.Level), loggingEvent.RenderedMessage)
             {
                 Exception = loggingEvent.ExceptionObject.ToString(),
                 Source = loggingEvent.LoggerName,

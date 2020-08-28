@@ -12,7 +12,12 @@ namespace Coderr.Client.Log4Net.ContextProviders
     /// </summary>
     public class LogsProvider : IContextCollectionProvider
     {
-        private static readonly LinkedList<LogEntryDto> Logs = new LinkedList<LogEntryDto>();
+        /// <summary>
+        /// Instance used to add log4net lines.
+        /// </summary>
+        public static readonly LogsProvider Instance = new LogsProvider();
+
+        private readonly LinkedList<LogEntryDto> Logs = new LinkedList<LogEntryDto>();
 
         /// <inheritdoc />
         public ContextCollectionDTO Collect(IErrorReporterContext context)
@@ -22,6 +27,7 @@ namespace Coderr.Client.Log4Net.ContextProviders
                 return null;
             }
 
+            RemoveOldEntries();
             lock (Logs)
             {
                 if (!Logs.Any())
@@ -29,8 +35,19 @@ namespace Coderr.Client.Log4Net.ContextProviders
                     return null;
                 }
 
-                var myLogs = Logs.ToArray();
-                logCtx.LogEntries = myLogs;
+                if (logCtx.LogEntries?.Length > 0)
+                {
+                    var entries = logCtx.LogEntries.ToList();
+                    entries.AddRange(Logs);
+                    logCtx.LogEntries = entries
+                        .OrderBy(x => x.TimestampUtc)
+                        .ToArray();
+                }
+                else
+                {
+                    logCtx.LogEntries = Logs.ToArray();
+                }
+
                 return null;
             }
         }
@@ -42,13 +59,28 @@ namespace Coderr.Client.Log4Net.ContextProviders
         ///     Add a new log entry to the internal collection.
         /// </summary>
         /// <param name="dto">entry</param>
-        public static void Add(LogEntryDto dto)
+        public void Add(LogEntryDto dto)
         {
             if (dto == null) throw new ArgumentNullException(nameof(dto));
             lock (Logs)
             {
                 Logs.AddLast(dto);
-                while (Logs.Count > 50) Logs.RemoveLast();
+                while (Logs.Count > 50)
+                {
+                    Logs.RemoveLast();
+                }
+            }
+        }
+
+        private void RemoveOldEntries()
+        {
+            lock (Logs)
+            {
+                var threshold = DateTime.UtcNow.AddMinutes(-5);
+                while (Logs.First != null && Logs.First.Value.TimestampUtc < threshold)
+                {
+                    Logs.RemoveFirst();
+                }
             }
         }
     }
