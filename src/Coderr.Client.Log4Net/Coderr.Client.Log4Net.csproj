@@ -1,36 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net451;net46;net461</TargetFrameworks>
-    <PackageId>Coderr.Client.Log4Net</PackageId>
-    <Version>1.1.1</Version>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PackageReleaseNotes>Bumped core version and corrected namespaces.</PackageReleaseNotes>
-    <Authors>1TCompany AB</Authors>
-    <Description>Reports all logged exceptions to Coderr - Automated exception handing. </Description>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Copyright>© 2017 1TCompany AB. All rights reserved.</Copyright>
-    <PackageTags>logger exceptions analysis log4net</PackageTags>
-    <PackageIconUrl>https://coderr.io/images/nuget_icon.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/coderrio/coderr.client.log4net/</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://coderr.io</PackageProjectUrl>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Coderr.Client" Version="1.1.5" />
-    <PackageReference Include="log4net" Version="2.0.8" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="README.txt">
-      <Pack>true</Pack>
-      <PackagePath>README.txt</PackagePath>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net461;netstandard20</TargetFrameworks>
+		<PackageId>Coderr.Client.Log4Net</PackageId>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<Version>1.2</Version>
+		<PackageReleaseNotes>Now attaches logs to every error report.</PackageReleaseNotes>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Authors>1TCompany AB</Authors>
+		<Description>Reports all logged exceptions to Coderr - Automated exception handing. </Description>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Copyright>© 2017 1TCompany AB. All rights reserved.</Copyright>
+		<PackageTags>logger exceptions analysis log4net</PackageTags>
+		<PackageIconUrl>https://coderr.io/images/nuget_icon.png</PackageIconUrl>
+		<RepositoryUrl>https://github.com/coderrio/coderr.client.log4net/</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://coderr.io</PackageProjectUrl>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="log4net" Version="2.0.8" />
+		<PackageReference Include="Coderr.Client">
+			<Version>2.0.0</Version>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="README.txt">
+			<Pack>true</Pack>
+			<PackagePath>README.txt</PackagePath>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
+	</ItemGroup>
 </Project>
