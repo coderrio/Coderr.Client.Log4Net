@@ -11,6 +11,7 @@ namespace Coderr.Client.Log4net.Demo
         {
             try
             {
+                _logger.Debug("Going to invoke the code.");
                 throw new AnnoyingException("Why don't you code better, mofo?");
             }
             catch (Exception ex)

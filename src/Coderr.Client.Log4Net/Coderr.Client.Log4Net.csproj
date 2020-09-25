@@ -6,8 +6,8 @@
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-		<Version>1.2.1</Version>
-		<PackageReleaseNotes>Removes log entries older than 5 minutes.</PackageReleaseNotes>
+		<Version>2.0.0</Version>
+		<PackageReleaseNotes>Now based on the new core library to support both .NET 4.6 and .NET Core.</PackageReleaseNotes>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>1TCompany AB</Authors>
@@ -22,9 +22,9 @@
 		<PackageProjectUrl>https://coderr.io</PackageProjectUrl>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="log4net" Version="2.0.8" />
+		<PackageReference Include="log4net" Version="2.0.11" />
 		<PackageReference Include="Coderr.Client">
-			<Version>2.0.0</Version>
+			<Version>2.0.1</Version>
 		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>

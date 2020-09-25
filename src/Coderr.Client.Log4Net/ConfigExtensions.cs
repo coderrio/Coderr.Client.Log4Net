@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using log4net;
 using log4net.Core;
 using log4net.Repository.Hierarchy;
 using Coderr.Client.Config;
 using Coderr.Client.log4net;
+using Coderr.Client.Log4Net.ContextProviders;
+using log4net.Layout;
+using log4net.Repository;
 
 // ReSharper disable once CheckNamespace
 
@@ -27,18 +31,7 @@ namespace Coderr.Client
         {
             if (config == null) throw new ArgumentNullException(nameof(config));
 
-#if NETSTANDARD2_0
-            CatchLog4NetExceptions(config, Assembly.GetEntryAssembly());
-#else
-            var root = ((Hierarchy)LogManager.GetRepository()).Root;
-            if (!(root is IAppenderAttachable attachable))
-                throw new NotSupportedException(
-                    "This configuration/version of Log4Net do not allow dynamic adding of appenders. Configure this adapter using code instead. See our online documentation for an example.");
-
-            var appender = new CoderrAppender();
-            appender.ActivateOptions();
-            attachable.AddAppender(appender);
-#endif
+            CatchLog4NetExceptions(config, Assembly.GetCallingAssembly());
         }
 
         /// <summary>
@@ -54,9 +47,26 @@ namespace Coderr.Client
         {
             if (config == null) throw new ArgumentNullException(nameof(config));
 
-            var root = ((Hierarchy)LogManager.GetRepository(assembly)).Root;
+            Err.Configuration.ContextProviders.Add(LogsProvider.Instance);
 
-            if (!(root is IAppenderAttachable attachable))
+            var repository = LogManager.GetRepository(assembly) as Hierarchy;
+            if (repository?.Configured != true)
+                throw new InvalidOperationException("log4net has not yet been configured. It must be configured before activating Coderr, or Coderr wont be able to receive log entries.");
+
+            foreach (var rootAppender in repository.Root.Appenders)
+            {
+                if (rootAppender is CoderrAppender)
+                {
+                    return;
+                }
+            }
+
+            if (repository.Root.Appenders.Count == 0)
+            {
+                throw new InvalidOperationException("Did not detect any log4net appenders.");
+            }
+
+            if (!(repository.Root is IAppenderAttachable attachable))
                 throw new NotSupportedException(
                     "This configuration/version of Log4Net do not allow dynamic adding of appenders. Configure this adapter using code instead. See our online documentation for an example.");
 

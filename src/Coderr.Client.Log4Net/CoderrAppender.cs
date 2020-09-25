@@ -13,6 +13,12 @@ namespace Coderr.Client.log4net
     /// </remarks>
     public class CoderrAppender : AppenderSkeleton
     {
+        /// <inheritdoc />
+        protected override bool FilterEvent(LoggingEvent loggingEvent)
+        {
+            return true;
+        }
+
         /// <summary>
         /// Uploads all log entries that contains an exception to codeRR.
         /// </summary>
@@ -21,18 +27,19 @@ namespace Coderr.Client.log4net
         {
             LogsProvider.Instance.Add(new LogEntryDto(loggingEvent.TimeStampUtc, ConvertLevel(loggingEvent.Level), loggingEvent.RenderedMessage)
             {
-                Exception = loggingEvent.ExceptionObject.ToString(),
+                Exception = loggingEvent.ExceptionObject?.ToString(),
                 Source = loggingEvent.LoggerName,
             });
             if (loggingEvent.ExceptionObject == null)
                 return;
-
             Err.Report(loggingEvent.ExceptionObject, new LogEntryDetails
             {
                 LogLevel = loggingEvent.Level.ToString(),
                 Message = loggingEvent.RenderedMessage,
                 ThreadName = loggingEvent.ThreadName,
-                Timestamp = loggingEvent.TimeStamp
+                Timestamp = loggingEvent.TimeStamp,
+                LoggerName = loggingEvent.LoggerName,
+                UserName= loggingEvent.UserName
             });
         }
 

@@ -11,11 +11,12 @@ namespace Coderr.Client.Log4net.Demo
         private static void Main(string[] args)
         {
             XmlConfigurator.Configure(new FileInfo("log4net.config"));
+            LogManager.GetLogger(typeof(Program)).Info("Started");
 
-            var url = new Uri("http://localhost:50473/");
+            var url = new Uri("http://localhost:60473/");
             Err.Configuration.Credentials(url,
-                "13d82df603a845c7a27164c4fec19dd6",
-                "6f0a0a7fac6d42caa7cc47bb34a6520b");
+                "1a68bc3e123c48a3887877561b0982e2",
+                "bd73436e965c4f3bb0578f57c21fde69");
 
             // injects into the log4net pipeline
             Err.Configuration.CatchLog4NetExceptions();

@@ -26,5 +26,8 @@ namespace Coderr.Client.log4net
         ///     log4net time stamp
         /// </summary>
         public DateTime Timestamp { get; set; }
+
+        public string UserName { get; set; }
+        public string LoggerName { get; set; }
     }
 }
