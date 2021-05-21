@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using log4net;
 using log4net.Core;
@@ -7,8 +6,6 @@ using log4net.Repository.Hierarchy;
 using Coderr.Client.Config;
 using Coderr.Client.log4net;
 using Coderr.Client.Log4Net.ContextProviders;
-using log4net.Layout;
-using log4net.Repository;
 
 // ReSharper disable once CheckNamespace
 
@@ -19,6 +16,23 @@ namespace Coderr.Client
     /// </summary>
     public static class ConfigExtensions
     {
+        private static bool _providerIsAdded=false;
+
+        /// <summary>
+        /// Include log4net logs with every error report.
+        /// </summary>
+        /// <param name="config">instance</param>
+        public static void AddLog4NetLogsToErrorReports(this CoderrConfiguration config)
+        {
+            if (_providerIsAdded)
+            {
+                return;
+            }
+
+            _providerIsAdded = true;
+            Err.Configuration.ContextProviders.Add(LogsProvider.Instance);
+        }
+
         /// <summary>
         ///     Adds the codeRR logger to log4net.
         /// </summary>
@@ -47,7 +61,7 @@ namespace Coderr.Client
         {
             if (config == null) throw new ArgumentNullException(nameof(config));
 
-            Err.Configuration.ContextProviders.Add(LogsProvider.Instance);
+            AddLog4NetLogsToErrorReports(config);
 
             var repository = LogManager.GetRepository(assembly) as Hierarchy;
             if (repository?.Configured != true)
