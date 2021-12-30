@@ -1,5 +1,7 @@
-﻿using Coderr.Client.Contracts;
+﻿using Coderr.Client.ContextCollections;
+using Coderr.Client.Contracts;
 using Coderr.Client.Log4Net.ContextProviders;
+using Coderr.Client.Reporters;
 using log4net.Appender;
 using log4net.Core;
 
@@ -32,15 +34,23 @@ namespace Coderr.Client.log4net
             });
             if (loggingEvent.ExceptionObject == null)
                 return;
-            Err.Report(loggingEvent.ExceptionObject, new LogEntryDetails
+
+            IErrorReporterContext context = new ErrorReporterContext(this, loggingEvent.ExceptionObject);
+            var dataCollection = new LogEntryDetails
             {
                 LogLevel = loggingEvent.Level.ToString(),
                 Message = loggingEvent.RenderedMessage,
                 ThreadName = loggingEvent.ThreadName,
                 Timestamp = loggingEvent.TimeStamp,
                 LoggerName = loggingEvent.LoggerName,
-                UserName= loggingEvent.UserName
-            });
+                UserName = loggingEvent.UserName
+            }.ToContextCollection("LogEntry");
+            context.ContextCollections.Add(dataCollection);
+            
+            var coderrCollection = context.ContextCollections.GetCoderrCollection();
+            coderrCollection.Properties[CoderrCollectionProperties.HighlightCollection] = "LogEntry";
+
+            Err.Report(context);
         }
 
         private int ConvertLevel(Level level)

@@ -6,8 +6,8 @@
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Coderr.Client.log4net.xml</DocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-		<Version>2.0.1</Version>
-		<PackageReleaseNotes>Added the possibility to attach logs to error reports.</PackageReleaseNotes>
+		<Version>2.0.2</Version>
+		<PackageReleaseNotes>Bumped versions.</PackageReleaseNotes>
 	</PropertyGroup>
 	<PropertyGroup>
 		<Authors>Coderr AB</Authors>
@@ -22,9 +22,9 @@
 		<PackageProjectUrl>https://coderr.io</PackageProjectUrl>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="log4net" Version="2.0.11" />
+		<PackageReference Include="log4net" Version="2.0.13" />
 		<PackageReference Include="Coderr.Client">
-			<Version>2.0.1</Version>
+			<Version>2.0.5</Version>
 		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>
